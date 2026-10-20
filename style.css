@@ -1,0 +1,421 @@
+/* CSS Variables for Fluent Dark Theme */
+:root {
+  --bg-page: #1f1f1f;
+  --bg-card: #292929;
+  --bg-interactive: #333333;
+  --border: #404040;
+  --accent: #4cc2ff;
+  --accent-hover: #6cd0ff;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --success: #6ccb5f;
+  --warning: #ff99a4;
+  --font-family: "Segoe UI", "Segoe UI Variable", system-ui, sans-serif;
+  --radius-card: 8px;
+  --radius-btn: 4px;
+  --header-height: 56px;
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: var(--font-family);
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  height: var(--header-height);
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 1000;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--text-primary);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 4px;
+}
+
+.icon-btn:hover {
+  color: var(--text-primary);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.icon-btn .icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Main Content */
+.site-main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.hero-image {
+  flex: 0 0 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Product visual wrapper for the actual image */
+.product-visual-wrapper {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 40px rgba(76, 194, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-visual-wrapper:hover {
+  transform: translateY(-4px);
+}
+
+.product-image {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  display: block;
+}
+
+.placeholder {
+  width: 100%;
+  padding-top: 56%; /* 16:9 ratio */
+  background: linear-gradient(135deg, #3a3a3a, #2a2a2a);
+  border-radius: var(--radius-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.hero-details {
+  flex: 0 0 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.label {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.product-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.subtitle, .edition {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.stock-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(108, 203, 95, 0.15);
+  color: var(--success);
+  padding: 4px 8px;
+  border-radius: 9999px; /* pill */
+  font-size: 14px;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 16px;
+  border-radius: var(--radius-btn);
+  transition: background-color 0.2s;
+}
+
+.primary-btn {
+  background: var(--accent);
+  color: var(--bg-page);
+}
+
+.primary-btn:hover {
+  background: var(--accent-hover);
+}
+
+.secondary-btn {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+.secondary-btn:hover {
+  background: var(--bg-interactive);
+}
+
+/* Description Section */
+.description h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.description p {
+  margin-bottom: 12px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.features .icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* System Requirements Card */
+.requirements-card {
+  background: var(--bg-card);
+  padding: 24px;
+  border-radius: var(--radius-card);
+  margin-top: 48px;
+}
+
+.requirements-card h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.requirements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.req-item {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.req-item strong {
+  color: var(--text-primary);
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal {
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  padding: 24px;
+  max-width: 480px;
+  width: 90%;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+.modal-close:hover {
+  color: var(--text-primary);
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.modal-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--warning);
+  margin-bottom: 16px;
+}
+
+.modal-message p {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.key-box {
+  background: var(--bg-interactive);
+  border-radius: var(--radius-card);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+#licenseKey {
+  font-family: "Cascadia Code", "Consolas", monospace;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: var(--text-primary);
+  text-align: center;
+  flex-grow: 1;
+}
+
+.copy-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+.copy-btn:hover {
+  color: var(--accent);
+}
+
+/* Footer */
+.site-footer {
+  background: var(--bg-page);
+  padding: 24px;
+  text-align: center;
+  margin-top: 48px;
+}
+
+.site-footer p {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  margin: 0 8px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.footer-links a:hover {
+  color: var(--text-primary);
+}
+
+/* Utility Classes */
+.hidden {
+  display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .hero {
+    flex-direction: column;
+  }
+  .hero-image, .hero-details {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  .hero-image {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+  }
+  .product-visual-wrapper {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .header-left, .header-right {
+    padding: 0 12px;
+  }
+  .modal {
+    width: calc(100% - 32px);
+    margin: 0 16px;
+  }
+}
